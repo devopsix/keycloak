@@ -721,7 +721,7 @@ module.controller('UserCredentialsCtrl', function($scope, realm, user, $route, $
     };
 
     $scope.emailActions = [];
-    $scope.emailActionsTimeout = TimeUnit2.asUnit(realm.actionTokenGeneratedByAdminLifespan);
+    $scope.emailActionsTimeout = TimeUnit2.asUnit(realm.actionTokenGeneratedByAdminLifespan ? realm.actionTokenGeneratedByAdminLifespan : 43200);
     $scope.disableableCredentialTypes = [];
 
     $scope.sendExecuteActionsEmail = function() {
